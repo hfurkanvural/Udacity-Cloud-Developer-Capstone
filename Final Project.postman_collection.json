@@ -1,15 +1,15 @@
 {
 	"info": {
-		"_postman_id": "d0700d24-79ec-487e-8403-b565bef7f8e0",
-		"name": "Udacity C4 Project",
+		"_postman_id": "d184ab34-d9a5-40a9-9c15-0f41a0b11376",
+		"name": "Udacity Capstone Project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "TODOs",
+			"name": "Items",
 			"item": [
 				{
-					"name": "Get all todos",
+					"name": "Get all items",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -19,30 +19,26 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos",
+							"raw": "https://{{apiId}}.execute-api.eu-central-1.amazonaws.com/dev/items",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"eu-central-1",
 								"amazonaws",
 								"com"
 							],
 							"path": [
 								"dev",
-								"todos"
+								"items"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create todo",
+					"name": "Create item",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -60,30 +56,30 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Water flowers\",\n\t\"dueDate\": \"2019-06-11\"\n}"
+							"raw": "{\n\t\"name\": \"Good old times\",\n\t\"desc\":\t\"This is the time we were having fun in Madrid.....\",\n\t\"Date\": \"2019-06-11\"\n}"
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos",
+							"raw": "https://{{apiId}}.execute-api.eu-central-1.amazonaws.com/dev/items",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"eu-central-1",
 								"amazonaws",
 								"com"
 							],
 							"path": [
 								"dev",
-								"todos"
+								"items"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update todo",
+					"name": "Update item",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -99,29 +95,29 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Change the world\",\n\t\"dueDate\": \"2019-12-11\",\n\t\"done\": true\n}"
+							"raw": "{\n    \"name\": \"good mu times?\",\n    \"desc\": \"Sanki caliscak bu sefer....\",\n    \"Date\": \"2020-06-03\",\n    \"liked\": false\n}"
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/35dd600f-43c2-4649-903c-615e1586a26f",
+							"raw": "https://{{apiId}}.execute-api.eu-central-1.amazonaws.com/dev/items/7e34943f-3d72-4874-9207-e966fad4335a",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"eu-central-1",
 								"amazonaws",
 								"com"
 							],
 							"path": [
 								"dev",
-								"todos",
-								"35dd600f-43c2-4649-903c-615e1586a26f"
+								"items",
+								"7e34943f-3d72-4874-9207-e966fad4335a"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete todo",
+					"name": "Delete item",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -142,19 +138,19 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/fe671583-4512-45f6-9475-4265c04362fb",
+							"raw": "https://{{apiId}}.execute-api.eu-central-1.amazonaws.com/dev/items/af53f979-2d84-466e-b94c-5b2e2e347399",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"eu-central-1",
 								"amazonaws",
 								"com"
 							],
 							"path": [
 								"dev",
-								"todos",
-								"fe671583-4512-45f6-9475-4265c04362fb"
+								"items",
+								"af53f979-2d84-466e-b94c-5b2e2e347399"
 							]
 						}
 					},
@@ -176,19 +172,19 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/3836b777-9bc4-4429-9b79-ba4e4f5f91c0/attachment",
+							"raw": "https://{{apiId}}.execute-api.eu-central-1.amazonaws.com/dev/items/d9c6dd2-6ff0-49c4-aa9a-66f912ee0749/attachment",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"eu-central-1",
 								"amazonaws",
 								"com"
 							],
 							"path": [
 								"dev",
-								"todos",
-								"3836b777-9bc4-4429-9b79-ba4e4f5f91c0",
+								"items",
+								"d9c6dd2-6ff0-49c4-aa9a-66f912ee0749",
 								"attachment"
 							]
 						}
@@ -200,7 +196,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ce2b42d4-8cc5-4f30-a6ed-e7f0f303c3fd",
+						"id": "2b0679cc-a5b3-4907-a768-745a306e50a1",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -210,21 +206,22 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "efb16c49-3866-4241-97d1-360ad72736d8",
+						"id": "b4f72764-3644-43fe-a8f0-a9f8f0912f90",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2e83c0fe-6650-44d5-a90f-4c27ff720d83",
+				"id": "147d76b0-d59c-4841-94a1-d7d524dc9b7d",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -234,7 +231,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "977c227e-2df3-42eb-9a48-ec25e2f7eeae",
+				"id": "0b035bd3-abf7-4ce9-aa36-51af413496e3",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -244,16 +241,17 @@
 	],
 	"variable": [
 		{
-			"id": "bf208e6b-f66d-4008-9366-dd541ff65425",
+			"id": "f771eb09-e9b8-43f3-8eb4-7fa9f9cbbd13",
 			"key": "apiId",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "9bc6399a-d2bb-4f2d-9ffa-8480370d383c",
+			"id": "113e05b2-6dc9-45be-a422-47b11b4c1651",
 			"key": "authToken",
 			"value": "",
 			"type": "string"
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
