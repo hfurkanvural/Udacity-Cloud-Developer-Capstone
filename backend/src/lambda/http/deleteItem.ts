@@ -1,11 +1,19 @@
 import 'source-map-support/register';
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { generateUploadUrl } from '../../businessLogic/items';
+import { deleteItem } from '../../businessLogic/items';
 import * as middy from 'middy'
 import { cors } from 'middy/middlewares'
 
 export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-  const signedUrl = await generateUploadUrl(event);
+  
+  if (!(await deleteItem(event))) {
+    return {
+      statusCode: 404, //Not Found
+      body: JSON.stringify({
+        error: 'Item not found'
+      })
+    };
+  }
 
   handler.use(
     cors({
@@ -15,8 +23,6 @@ export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGat
 
   return {
     statusCode: 202, //Accepted
-    body: JSON.stringify({
-      uploadUrl: signedUrl
-    })
+    body: JSON.stringify({})
   };
 })

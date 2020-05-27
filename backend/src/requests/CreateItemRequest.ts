@@ -1,7 +1,8 @@
 /**
  * Fields in a request to create a single TODO item.
  */
-export interface CreateTodoRequest {
+export interface CreateItemRequest {
   name: string
-  dueDate: string
+  desc: string
+  Date: string
 }

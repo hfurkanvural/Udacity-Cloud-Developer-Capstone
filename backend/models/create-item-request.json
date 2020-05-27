@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "item",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "desc": {
+        "type": "string"
+      },
+      "createdAt": {
+        "type": "string"
+      },
+      "Date": {
+        "type": "string"
+      },
+      "liked": {
+        "type": "boolean"
+      },
+      "attachementUrl": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name", "createdAt", "Date"
+    ],
+    "additionalProperties": false
+}
