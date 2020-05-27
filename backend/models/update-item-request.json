@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "item",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "desc": {
+            "type": "string"
+        },
+        "Date": {
+            "type": "string"
+        },
+        "liked": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "name",
+        "Date",
+        "liked"
+    ],
+    "additionalProperties": false
+}

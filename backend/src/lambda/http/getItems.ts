@@ -1,11 +1,10 @@
 import 'source-map-support/register';
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { generateUploadUrl } from '../../businessLogic/items';
+import { getItems } from '../../businessLogic/items';
 import * as middy from 'middy'
 import { cors } from 'middy/middlewares'
 
 export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-  const signedUrl = await generateUploadUrl(event);
 
   handler.use(
     cors({
@@ -14,9 +13,9 @@ export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGat
   )
 
   return {
-    statusCode: 202, //Accepted
+    statusCode: 200, //OK
     body: JSON.stringify({
-      uploadUrl: signedUrl
+      items: await getItems(event)
     })
   };
 })
